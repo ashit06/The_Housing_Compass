@@ -1,0 +1,188 @@
+/* Import centralized color system */
+@import url('../../../styles/colors.css');
+
+/* =============================================================================
+  LOGIN PAGE STYLES
+============================================================================= */
+
+/* -----------------------------------------------------------------------------
+  MAIN CONTAINER
+----------------------------------------------------------------------------- */
+.login-page {
+  min-height: 100vh;
+  background: var(--gradient-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.login-page .login-container {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* -----------------------------------------------------------------------------
+  CARD LAYOUT
+----------------------------------------------------------------------------- */
+.login-page .login-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: var(--space-10);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-2xl);
+  text-align: center;
+  border: 1px solid var(--card-border);
+}
+
+/* -----------------------------------------------------------------------------
+  TYPOGRAPHY
+----------------------------------------------------------------------------- */
+.login-page .login-card h2 {
+  color: var(--neutral-text-dark);
+  margin-bottom: var(--space-4);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.login-page .login-card p {
+  color: var(--neutral-text-medium);
+  margin-bottom: var(--space-8);
+  line-height: 1.5;
+}
+
+/* -----------------------------------------------------------------------------
+  ERROR MESSAGES
+----------------------------------------------------------------------------- */
+.login-page .error-message {
+  background: var(--error-bg);
+  color: var(--error-coral);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-6);
+  border: 1px solid var(--error-border);
+  font-size: 0.875rem;
+}
+
+/* -----------------------------------------------------------------------------
+  FORM ELEMENTS
+----------------------------------------------------------------------------- */
+.login-page .login-form {
+  text-align: left;
+}
+
+.login-page .form-group {
+  margin-bottom: var(--space-5);
+}
+
+.login-page .form-group label {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: var(--neutral-text-dark);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.login-page .form-group input {
+  width: 100%;
+  padding: var(--space-4);
+  border: 2px solid var(--input-border);
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+}
+
+.login-page .form-group input::placeholder {
+  color: var(--input-placeholder);
+}
+
+.login-page .form-group input:focus {
+  outline: none;
+  border-color: var(--input-border-focus);
+  box-shadow: 0 0 0 3px var(--input-focus-ring);
+}
+
+/* -----------------------------------------------------------------------------
+  BUTTONS
+----------------------------------------------------------------------------- */
+.login-page .login-btn {
+  width: 100%;
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  padding: var(--space-4);
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: var(--space-6);
+}
+
+.login-page .login-btn:hover {
+  background: var(--btn-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-primary-lg);
+}
+
+/* -----------------------------------------------------------------------------
+  FOOTER & LINKS
+----------------------------------------------------------------------------- */
+.login-page .login-footer {
+  margin-top: var(--space-6);
+  text-align: center;
+}
+
+.login-page .login-footer p {
+  margin-bottom: var(--space-2);
+  color: var(--neutral-text-medium);
+}
+
+.login-page .login-footer a {
+  color: var(--primary-green);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.login-page .login-footer a:hover {
+  color: var(--cta-green);
+  text-decoration: underline;
+}
+
+.login-page .forgot-password {
+  font-size: 0.875rem;
+  color: var(--neutral-text-light);
+  margin-top: var(--space-4);
+}
+
+.login-page .forgot-password a {
+  color: var(--neutral-text-medium);
+}
+
+.login-page .forgot-password a:hover {
+  color: var(--primary-green);
+}
+
+/* -----------------------------------------------------------------------------
+  RESPONSIVE DESIGN
+----------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .login-page {
+    padding: var(--space-4);
+  }
+
+  .login-page .login-card {
+    padding: var(--space-8);
+  }
+
+  .login-page .login-card h2 {
+    font-size: 1.75rem;
+  }
+}

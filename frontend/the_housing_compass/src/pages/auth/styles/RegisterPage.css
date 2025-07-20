@@ -1,0 +1,364 @@
+/* =============================================================================
+  REGISTER PAGE STYLES
+  Organized by component hierarchy and functionality
+============================================================================= */
+
+@import url('../../../styles/colors.css');
+
+/* =============================================================================
+  1. PAGE LAYOUT & CONTAINER
+============================================================================= */
+
+.register-page {
+  min-height: 100vh;
+  background: var(--gradient-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.register-page .register-container {
+  width: 100%;
+  max-width: 480px;
+}
+
+.register-page .register-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: var(--space-10);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-2xl);
+  text-align: center;
+  border: 1px solid var(--card-border);
+}
+
+/* =============================================================================
+  2. TYPOGRAPHY & HEADERS
+============================================================================= */
+
+.register-page .register-card h2 {
+  color: var(--neutral-text-dark);
+  margin-bottom: var(--space-4);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.register-page .register-card p {
+  color: var(--neutral-text-medium);
+  margin-bottom: var(--space-8);
+  line-height: 1.5;
+}
+
+/* =============================================================================
+  3. NOTIFICATION MESSAGES
+============================================================================= */
+
+.register-page .error-message {
+  background: var(--error-bg);
+  color: var(--error-coral);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-6);
+  border: 1px solid var(--error-border);
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+.register-page .success-message {
+  background: var(--success-bg);
+  color: var(--success-green);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-6);
+  border: 1px solid var(--success-border);
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+/* =============================================================================
+  4. FORM STRUCTURE & LAYOUT
+============================================================================= */
+
+.register-page .register-form {
+  text-align: left;
+}
+
+.register-page .form-group {
+  margin-bottom: var(--space-5);
+}
+
+/* =============================================================================
+  5. FORM INPUTS & LABELS
+============================================================================= */
+
+.register-page .form-group label {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: var(--neutral-text-dark);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.register-page .form-group input {
+  width: 100%;
+  padding: var(--space-4);
+  border: 2px solid var(--input-border);
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+}
+
+.register-page .form-group input::placeholder {
+  color: var(--input-placeholder);
+}
+
+/* =============================================================================
+  6. INPUT STATES & VALIDATION
+============================================================================= */
+
+.register-page .form-group input:focus {
+  outline: none;
+  border-color: var(--input-border-focus);
+  box-shadow: 0 0 0 3px var(--input-focus-ring);
+}
+
+.register-page .form-group input:valid {
+  border-color: var(--success-border);
+}
+
+.register-page .form-group input.error {
+  border-color: var(--error-border);
+  box-shadow: 0 0 0 3px var(--error-bg);
+}
+
+/* =============================================================================
+  7. PASSWORD STRENGTH INDICATOR
+============================================================================= */
+
+.register-page .password-strength {
+  margin-top: var(--space-2);
+  font-size: 0.75rem;
+  color: var(--neutral-text-medium);
+}
+
+.register-page .password-strength.weak {
+  color: var(--error-coral);
+}
+
+.register-page .password-strength.medium {
+  color: var(--warning-gold);
+}
+
+.register-page .password-strength.strong {
+  color: var(--success-green);
+}
+
+/* =============================================================================
+  8. TERMS & CONDITIONS CHECKBOX
+============================================================================= */
+
+.register-page .terms-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  text-align: left;
+}
+
+.register-page .terms-checkbox input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+  accent-color: var(--primary-green);
+}
+
+.register-page .terms-checkbox label {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--neutral-text-medium);
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.register-page .terms-checkbox a {
+  color: var(--primary-green);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.register-page .terms-checkbox a:hover {
+  color: var(--cta-green);
+  text-decoration: underline;
+}
+
+/* =============================================================================
+  9. BUTTONS & ACTIONS
+============================================================================= */
+
+/* Primary Register Button */
+.register-page .register-btn {
+  width: 100%;
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  padding: var(--space-4);
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: var(--space-6);
+}
+
+.register-page .register-btn:hover {
+  background: var(--btn-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-primary-lg);
+}
+
+.register-page .register-btn:disabled {
+  background: var(--neutral-text-light);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Social Register Buttons */
+.register-page .social-register {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.register-page .social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 2px solid var(--neutral-border);
+  border-radius: var(--radius-lg);
+  background: var(--neutral-white);
+  color: var(--neutral-text-dark);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.register-page .social-btn:hover {
+  border-color: var(--primary-green);
+  background: var(--filter-hover);
+  transform: translateY(-1px);
+}
+
+/* =============================================================================
+  10. DIVIDERS & SEPARATORS
+============================================================================= */
+
+.register-page .divider {
+  display: flex;
+  align-items: center;
+  margin: var(--space-6) 0;
+  color: var(--neutral-text-light);
+  font-size: 0.875rem;
+}
+
+.register-page .divider::before,
+.register-page .divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--neutral-divider);
+}
+
+.register-page .divider::before {
+  margin-right: var(--space-4);
+}
+
+.register-page .divider::after {
+  margin-left: var(--space-4);
+}
+
+/* =============================================================================
+  11. FOOTER & LINKS
+============================================================================= */
+
+.register-page .register-footer {
+  margin-top: var(--space-6);
+  text-align: center;
+}
+
+.register-page .register-footer p {
+  margin-bottom: var(--space-2);
+  color: var(--neutral-text-medium);
+}
+
+.register-page .register-footer a {
+  color: var(--primary-green);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.register-page .register-footer a:hover {
+  color: var(--cta-green);
+  text-decoration: underline;
+}
+
+/* =============================================================================
+  12. Special Elements
+============================================================================= */
+
+/* Error Styling */
+.register-page .input-error {
+  border-color: #e74c3c !important;
+}
+
+.register-page .error-text {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 5px;
+  text-align: left;
+  width: 100%;
+}
+
+.register-page .error-message {
+  color: #e74c3c;
+  background-color: #fdd;
+  border: 1px solid #e74c3c;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* =============================================================================
+  13. RESPONSIVE DESIGN
+============================================================================= */
+
+@media (max-width: 480px) {
+  .register-page {
+    padding: var(--space-4);
+  }
+
+  .register-page .register-card {
+    padding: var(--space-8);
+  }
+
+  .register-page .register-card h2 {
+    font-size: 1.75rem;
+  }
+
+  .register-page .register-container {
+    max-width: 100%;
+  }
+}

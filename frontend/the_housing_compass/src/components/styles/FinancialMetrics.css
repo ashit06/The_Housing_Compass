@@ -1,0 +1,73 @@
+/* Financial Metrics Styles */
+.financial-metrics-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background: var(--neutral-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    margin-top: var(--space-4);
+    border: solid 0.5px var(--neutral-border);
+
+    background: rgba(255, 255, 255, 0.19);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.8px);
+    -webkit-backdrop-filter: blur(5.8px);
+}
+
+.financial-metrics-container .metric-item {
+    padding: var(--space-3);
+    background: var(--neutral-soft);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    text-align: center;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.financial-metrics-container .metric-item strong {
+    color: var(--neutral-text-medium);
+    font-size: 0.9rem;
+}
+
+.financial-metrics-container .metric-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.financial-metrics-container .metric-value.positive {
+    color: green;
+}
+
+.financial-metrics-container .metric-value.negative {
+    color: red;
+}
+
+.financial-metrics-container .metric-value.neutral {
+    color: orange;
+}
+
+.financial-metrics-container .metric-value.default {
+    color: #374151;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .financial-metrics-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .financial-metrics-container .metric-item {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .financial-metrics-container .metric-item:last-child {
+        border-bottom: none;
+    }
+}
