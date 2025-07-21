@@ -4,7 +4,7 @@ from decimal import Decimal
 import json
 from datetime import date, timedelta
 import random
-from django.db import connection
+# from django.db import connection # No longer needed if reset_auto_increment is removed
 
 
 class Command(BaseCommand):
@@ -14,7 +14,7 @@ class Command(BaseCommand):
         # Clear existing data
         Listing.objects.all().delete()
         PriceHistory.objects.all().delete()
-        self.reset_auto_increment()
+        # self.reset_auto_increment() # This line is removed for database compatibility
 
         # ====================================================================
         # Properties from Noida, Uttar Pradesh
@@ -133,12 +133,13 @@ class Command(BaseCommand):
             )
         )
 
-    def reset_auto_increment(self):
-        """Reset auto-increment counters for SQLite database"""
-        with connection.cursor() as cursor:
-            cursor.execute("DELETE FROM sqlite_sequence WHERE name='listings_listing';")
-            cursor.execute("DELETE FROM sqlite_sequence WHERE name='listings_pricehistory';")
-
-        self.stdout.write(
-            self.style.SUCCESS('Reset auto-increment counters')
-        )
+    # The reset_auto_increment method is removed as it's SQLite-specific and not needed for PostgreSQL.
+    # def reset_auto_increment(self):
+    #     """Reset auto-increment counters for SQLite database"""
+    #     with connection.cursor() as cursor:
+    #         cursor.execute("DELETE FROM sqlite_sequence WHERE name='listings_listing';")
+    #         cursor.execute("DELETE FROM sqlite_sequence WHERE name='listings_pricehistory';")
+    #
+    #     self.stdout.write(
+    #         self.style.SUCCESS('Reset auto-increment counters')
+    #     )
