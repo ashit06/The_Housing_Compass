@@ -40,22 +40,12 @@
 | **Authentication** | Firebase Authentication |
 | **AI Integration** | Google Gemini API |
 | **Deployment** | **Vercel** (Frontend), **Render** (Backend & Database) |
-| **Containerization**| Docker |
 
 ---
 
 ## 🏗️ Architecture
 
-React Frontend (Vercel)
-│
-├── User Authentication (Firebase)
-│
-▼
-Django REST API (Render) <── External APIs (Google Gemini)
-│
-▼
-PostgreSQL Database (Render)
-
+<img width="2048" height="2048" alt="Gemini_Generated_Image_oxk05koxk05koxk0" src="https://github.com/user-attachments/assets/7674c072-bdb5-45f5-b14c-9d7ef82f0ae7" />
 
 ---
 
